@@ -1,0 +1,22 @@
+{
+  "name": "mean project",
+  "authors": [
+    "tauqeer <tauqeer.shakir@yahoo.com>"
+  ],
+  "description": "simple mean project",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-material": "^1.0.7"
+  }
+}
