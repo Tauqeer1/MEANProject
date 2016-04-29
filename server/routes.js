@@ -10,7 +10,7 @@ api.post('/signup',function(req,res){
     console.log("signup body " , req.body);
     dbSchema.User.findOne({email : req.body.email},function(err,success){
         if(success){
-            res.send({status : false , message : 'Already user exists'});
+            res.send({status : false , message : 'User Already exist'});
         }
         else{
             var user = new dbSchema.User(req.body);
@@ -19,7 +19,7 @@ api.post('/signup',function(req,res){
                     res.send({status : false , message : 'Sign up error' , errorData : err});
                 }
                 else {
-                    res.send({status : true , message : 'sign up successfully' , successData : success});
+                    res.send({status : true , message : 'Successfully Sign up' , successData : success});
                 }
             });
         }
