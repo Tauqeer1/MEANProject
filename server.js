@@ -6,6 +6,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var configDB = require('./server/config/db.config.js');
+var api = require('./server/routes.js');
 var port = process.env.PORT || 3000;
 
 
@@ -16,7 +17,8 @@ app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json()); //parse the json
 app.use(morgan('dev')); //log all the requests
 app.use(express.static(__dirname + '/client'));
-require('./server/routes')(app);
+app.use('/api',api);
+//require('./server/routes')(app);
 
 
 app.listen(port,function(){
